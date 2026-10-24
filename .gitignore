@@ -1,0 +1,43 @@
+﻿# Visual Studio / .NET Gitignore
+
+# Carpetas de caché y compilación de .NET
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Archivos de configuración de usuario y de Visual Studio
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de caché de compilación y diagnóstico
+project.lock.json
+project.fragment.lock.json
+artifacts/
+ClientBin/
+~$*
+*.dbmdl
+*.jfm
+*.suo
+*.cache
+*.opendb
+*.userprefs
+
+# Resultados de pruebas y cobertura
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publicaciones y paquetes NuGet locales
+[Bb]uild/
+[Pp]ublish/
+nupkgs/
+*.nupkg
+*.snupkg
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
