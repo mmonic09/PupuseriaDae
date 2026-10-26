@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pupuseria.Modulos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace pupus
+namespace Pupuseria.Forms
 {
     public partial class FrmPrincipal : Form
     {
@@ -20,32 +21,24 @@ namespace pupus
 
         }
 
-
-        private Form activeForm = null;
-
-        private void openChildForm(Form childForm)
+        private void AbrirModulo(UserControl modulo)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
+            while (pnlContenido.Controls.Count > 0)
+                pnlContenido.Controls[0].Dispose();   // quita el módulo anterior
 
-            activeForm = childForm;
-
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-
-            pnlContenido.Controls.Add(childForm);
-            pnlContenido.Tag = childForm;
-
-            childForm.BringToFront();
-            childForm.Show();
+            modulo.Dock = DockStyle.Fill;
+            pnlContenido.Controls.Add(modulo);
+            modulo.BringToFront();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnProductos_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new FormulariosMenus.FormProductos());
+            AbrirModulo(new UcProductos());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirModulo(new UcUsuarios());
         }
     }
 }
