@@ -1,4 +1,7 @@
-using pupus.FormulariosMenus;
+using Pupuseria.Modulos;
+using Pupuseria.Forms;
+
+
 
 namespace pupus
 {
@@ -16,16 +19,10 @@ namespace pupus
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FrmPrincipal principal = new FrmPrincipal();
-                principal.Show();
-                
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error al abrir la pantalla: " + ex.Message);
-            }
+            var principal = new FrmPrincipal();
+            principal.FormClosed += (s, args) => Close();
+            principal.Show();
+            Hide();
         }
     }
 }
