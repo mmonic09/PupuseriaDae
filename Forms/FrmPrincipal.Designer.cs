@@ -50,16 +50,16 @@ partial class FrmPrincipal
         btnVentas = new Guna.UI2.WinForms.Guna2Button();
         btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
         pnlLogo = new Panel();
-        label3 = new Label();
-        lblTituloPupuseria = new Label();
         pnlContenido = new Panel();
         pnlHeader = new Panel();
         lblHeaderTitulo = new Label();
+        pictureBox2 = new PictureBox();
         pnlUsuario.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         pnlMenu.SuspendLayout();
         pnlLogo.SuspendLayout();
         pnlHeader.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         SuspendLayout();
         // 
         // pnlUsuario
@@ -258,35 +258,12 @@ partial class FrmPrincipal
         // 
         // pnlLogo
         // 
-        pnlLogo.Controls.Add(label3);
-        pnlLogo.Controls.Add(lblTituloPupuseria);
+        pnlLogo.Controls.Add(pictureBox2);
         pnlLogo.Dock = DockStyle.Top;
         pnlLogo.Location = new Point(0, 0);
         pnlLogo.Name = "pnlLogo";
         pnlLogo.Size = new Size(231, 143);
         pnlLogo.TabIndex = 8;
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-        label3.ForeColor = Color.FromArgb(255, 192, 128);
-        label3.Location = new Point(37, 71);
-        label3.Name = "label3";
-        label3.Size = new Size(153, 19);
-        label3.TabIndex = 1;
-        label3.Text = "Pupusería y Tradición";
-        // 
-        // lblTituloPupuseria
-        // 
-        lblTituloPupuseria.AutoSize = true;
-        lblTituloPupuseria.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-        lblTituloPupuseria.ForeColor = Color.White;
-        lblTituloPupuseria.Location = new Point(37, 43);
-        lblTituloPupuseria.Name = "lblTituloPupuseria";
-        lblTituloPupuseria.Size = new Size(143, 28);
-        lblTituloPupuseria.TabIndex = 0;
-        lblTituloPupuseria.Text = "El Buen Sabor";
         // 
         // pnlContenido
         // 
@@ -321,6 +298,15 @@ partial class FrmPrincipal
         lblHeaderTitulo.TabIndex = 0;
         lblHeaderTitulo.Text = "Dashboard General";
         // 
+        // pictureBox2
+        // 
+        pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+        pictureBox2.Location = new Point(56, 21);
+        pictureBox2.Name = "pictureBox2";
+        pictureBox2.Size = new Size(108, 108);
+        pictureBox2.TabIndex = 0;
+        pictureBox2.TabStop = false;
+        // 
         // FrmPrincipal
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -339,9 +325,9 @@ partial class FrmPrincipal
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         pnlMenu.ResumeLayout(false);
         pnlLogo.ResumeLayout(false);
-        pnlLogo.PerformLayout();
         pnlHeader.ResumeLayout(false);
         pnlHeader.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -361,7 +347,6 @@ partial class FrmPrincipal
     private Guna.UI2.WinForms.Guna2Button btnConsultaVentas;
     private Guna.UI2.WinForms.Guna2Button btnVentas;
     private Guna.UI2.WinForms.Guna2Button btnReportes;
-    private Label label3;
-    private Label lblTituloPupuseria;
     private PictureBox pictureBox1;
+    private PictureBox pictureBox2;
 }
