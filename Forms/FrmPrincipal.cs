@@ -45,5 +45,15 @@ namespace Pupuseria.Forms
         {
             AbrirModulo(new UcConsultaVentas());
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirModulo(new UcVentas());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirModulo(new UcReportes());
+        }
     }
 }

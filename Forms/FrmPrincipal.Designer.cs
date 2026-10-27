@@ -173,6 +173,7 @@ partial class FrmPrincipal
         btnReportes.Text = "Reportes Generales";
         btnReportes.TextAlign = HorizontalAlignment.Right;
         btnReportes.TextOffset = new Point(4, 0);
+        btnReportes.Click += btnReportes_Click;
         // 
         // btnConsultaVentas
         // 
@@ -226,6 +227,7 @@ partial class FrmPrincipal
         btnVentas.Text = "Punto de Venta";
         btnVentas.TextAlign = HorizontalAlignment.Right;
         btnVentas.TextOffset = new Point(-10, 0);
+        btnVentas.Click += btnVentas_Click;
         // 
         // btnUsuarios
         // 
@@ -269,7 +271,7 @@ partial class FrmPrincipal
         label3.AutoSize = true;
         label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         label3.ForeColor = Color.FromArgb(255, 192, 128);
-        label3.Location = new Point(37, 60);
+        label3.Location = new Point(37, 71);
         label3.Name = "label3";
         label3.Size = new Size(153, 19);
         label3.TabIndex = 1;
@@ -280,7 +282,7 @@ partial class FrmPrincipal
         lblTituloPupuseria.AutoSize = true;
         lblTituloPupuseria.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
         lblTituloPupuseria.ForeColor = Color.White;
-        lblTituloPupuseria.Location = new Point(42, 25);
+        lblTituloPupuseria.Location = new Point(37, 43);
         lblTituloPupuseria.Name = "lblTituloPupuseria";
         lblTituloPupuseria.Size = new Size(143, 28);
         lblTituloPupuseria.TabIndex = 0;
