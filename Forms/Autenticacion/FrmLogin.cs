@@ -3,7 +3,7 @@ using Pupuseria.Forms;
 
 
 
-namespace pupus
+namespace Pupuseria.Forms
 {
     public partial class FrmLogin : Form
     {
@@ -19,10 +19,15 @@ namespace pupus
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var principal = new FrmPrincipal();
-            principal.FormClosed += (s, args) => Close();
+            FrmPrincipal principal = new FrmPrincipal();
+            principal.WindowState = FormWindowState.Maximized;
             principal.Show();
-            Hide();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

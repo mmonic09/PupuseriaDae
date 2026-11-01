@@ -119,7 +119,7 @@
             panel1.Controls.Add(pnlEncabezado);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1119, 715);
+            panel1.Size = new Size(1119, 1240);
             panel1.TabIndex = 0;
             // 
             // pnlDetalle
@@ -132,10 +132,10 @@
             pnlDetalle.Controls.Add(guna2Panel1);
             pnlDetalle.Controls.Add(lblDetalle);
             pnlDetalle.CustomizableEdges = customizableEdges7;
-            pnlDetalle.Location = new Point(638, 124);
+            pnlDetalle.Location = new Point(21, 695);
             pnlDetalle.Name = "pnlDetalle";
             pnlDetalle.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            pnlDetalle.Size = new Size(452, 427);
+            pnlDetalle.Size = new Size(701, 427);
             pnlDetalle.TabIndex = 5;
             // 
             // dgvDetalle
@@ -327,7 +327,7 @@
             pnlProductos.Location = new Point(21, 124);
             pnlProductos.Name = "pnlProductos";
             pnlProductos.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            pnlProductos.Size = new Size(556, 427);
+            pnlProductos.Size = new Size(701, 554);
             pnlProductos.TabIndex = 1;
             // 
             // guna2Panel5
@@ -647,7 +647,7 @@
             AutoScroll = true;
             Controls.Add(panel1);
             Name = "UcVentas";
-            Size = new Size(1119, 718);
+            Size = new Size(1119, 1277);
             panel1.ResumeLayout(false);
             pnlDetalle.ResumeLayout(false);
             pnlDetalle.PerformLayout();

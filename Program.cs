@@ -1,5 +1,8 @@
-using System.Windows.Forms;
+using Pupuseria.Forms;
 using Pupuseria.Modulos;
+using Pupuseria.Properties;
+using System.Windows.Forms;
+
 
 namespace Pupuseria.Forms
 {
@@ -11,28 +14,11 @@ namespace Pupuseria.Forms
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();          
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
-            //Application.Run(Preview(new UcProductos())); // prueba de los Uc
+            // Inicialización requerida para aplicaciones modernas de WinForms en .NET
+            ApplicationConfiguration.Initialize();
 
+            // Arranca la aplicación mostrando el Login
+            Application.Run(new FrmLogin());
         }
-
-        /*private static Form Preview(UserControl control)
-        {
-            control.Dock = DockStyle.Fill;
-
-            var form = new Form
-            {
-                Text = $"Vista previa - {control.GetType().Name}",
-                StartPosition = FormStartPosition.CenterScreen,
-                Size = new Size(1000, 700)
-            };
-            form.Controls.Add(control);
-            return form;
-        }*/
     }
 }

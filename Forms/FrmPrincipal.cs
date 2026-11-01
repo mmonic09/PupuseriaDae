@@ -14,6 +14,7 @@ namespace Pupuseria.Forms
         public FrmPrincipal()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Form2_Load(object sender, EventArgs e)

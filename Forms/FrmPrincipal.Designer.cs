@@ -31,14 +31,16 @@ partial class FrmPrincipal
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         pnlUsuario = new Panel();
         pictureBox1 = new PictureBox();
         lblRol = new Label();
@@ -50,16 +52,17 @@ partial class FrmPrincipal
         btnVentas = new Guna.UI2.WinForms.Guna2Button();
         btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
         pnlLogo = new Panel();
+        pictureBox2 = new PictureBox();
         pnlContenido = new Panel();
         pnlHeader = new Panel();
         lblHeaderTitulo = new Label();
-        pictureBox2 = new PictureBox();
+        btnCategoria = new Guna.UI2.WinForms.Guna2Button();
         pnlUsuario.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         pnlMenu.SuspendLayout();
         pnlLogo.SuspendLayout();
-        pnlHeader.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+        pnlHeader.SuspendLayout();
         SuspendLayout();
         // 
         // pnlUsuario
@@ -134,6 +137,7 @@ partial class FrmPrincipal
         // 
         pnlMenu.AutoScroll = true;
         pnlMenu.BackColor = Color.FromArgb(62, 39, 35);
+        pnlMenu.Controls.Add(btnCategoria);
         pnlMenu.Controls.Add(btnReportes);
         pnlMenu.Controls.Add(btnConsultaVentas);
         pnlMenu.Controls.Add(btnVentas);
@@ -152,7 +156,7 @@ partial class FrmPrincipal
         // 
         btnReportes.BackColor = Color.FromArgb(62, 39, 35);
         btnReportes.BorderRadius = 15;
-        btnReportes.CustomizableEdges = customizableEdges3;
+        btnReportes.CustomizableEdges = customizableEdges5;
         btnReportes.DisabledState.BorderColor = Color.DarkGray;
         btnReportes.DisabledState.CustomBorderColor = Color.DarkGray;
         btnReportes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -167,7 +171,7 @@ partial class FrmPrincipal
         btnReportes.Location = new Point(12, 475);
         btnReportes.Name = "btnReportes";
         btnReportes.Padding = new Padding(0, 0, 10, 0);
-        btnReportes.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        btnReportes.ShadowDecoration.CustomizableEdges = customizableEdges6;
         btnReportes.Size = new Size(202, 45);
         btnReportes.TabIndex = 12;
         btnReportes.Text = "Reportes Generales";
@@ -179,7 +183,7 @@ partial class FrmPrincipal
         // 
         btnConsultaVentas.BackColor = Color.FromArgb(62, 39, 35);
         btnConsultaVentas.BorderRadius = 15;
-        btnConsultaVentas.CustomizableEdges = customizableEdges5;
+        btnConsultaVentas.CustomizableEdges = customizableEdges7;
         btnConsultaVentas.DisabledState.BorderColor = Color.DarkGray;
         btnConsultaVentas.DisabledState.CustomBorderColor = Color.DarkGray;
         btnConsultaVentas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -194,7 +198,7 @@ partial class FrmPrincipal
         btnConsultaVentas.Location = new Point(12, 409);
         btnConsultaVentas.Name = "btnConsultaVentas";
         btnConsultaVentas.Padding = new Padding(0, 0, 10, 0);
-        btnConsultaVentas.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        btnConsultaVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
         btnConsultaVentas.Size = new Size(202, 45);
         btnConsultaVentas.TabIndex = 11;
         btnConsultaVentas.Text = "Consulta de Ventas";
@@ -206,7 +210,7 @@ partial class FrmPrincipal
         // 
         btnVentas.BackColor = Color.FromArgb(62, 39, 35);
         btnVentas.BorderRadius = 15;
-        btnVentas.CustomizableEdges = customizableEdges7;
+        btnVentas.CustomizableEdges = customizableEdges9;
         btnVentas.DisabledState.BorderColor = Color.DarkGray;
         btnVentas.DisabledState.CustomBorderColor = Color.DarkGray;
         btnVentas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -221,7 +225,7 @@ partial class FrmPrincipal
         btnVentas.Location = new Point(12, 340);
         btnVentas.Name = "btnVentas";
         btnVentas.Padding = new Padding(0, 0, 10, 0);
-        btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges10;
         btnVentas.Size = new Size(202, 45);
         btnVentas.TabIndex = 10;
         btnVentas.Text = "Punto de Venta";
@@ -233,7 +237,7 @@ partial class FrmPrincipal
         // 
         btnUsuarios.BackColor = Color.FromArgb(62, 39, 35);
         btnUsuarios.BorderRadius = 15;
-        btnUsuarios.CustomizableEdges = customizableEdges9;
+        btnUsuarios.CustomizableEdges = customizableEdges11;
         btnUsuarios.DisabledState.BorderColor = Color.DarkGray;
         btnUsuarios.DisabledState.CustomBorderColor = Color.DarkGray;
         btnUsuarios.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -248,7 +252,7 @@ partial class FrmPrincipal
         btnUsuarios.Location = new Point(12, 273);
         btnUsuarios.Name = "btnUsuarios";
         btnUsuarios.Padding = new Padding(0, 0, 10, 0);
-        btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges10;
+        btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges12;
         btnUsuarios.Size = new Size(202, 45);
         btnUsuarios.TabIndex = 9;
         btnUsuarios.Text = "Gestión Usuarios";
@@ -264,6 +268,15 @@ partial class FrmPrincipal
         pnlLogo.Name = "pnlLogo";
         pnlLogo.Size = new Size(231, 143);
         pnlLogo.TabIndex = 8;
+        // 
+        // pictureBox2
+        // 
+        pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+        pictureBox2.Location = new Point(56, 21);
+        pictureBox2.Name = "pictureBox2";
+        pictureBox2.Size = new Size(108, 108);
+        pictureBox2.TabIndex = 0;
+        pictureBox2.TabStop = false;
         // 
         // pnlContenido
         // 
@@ -298,14 +311,31 @@ partial class FrmPrincipal
         lblHeaderTitulo.TabIndex = 0;
         lblHeaderTitulo.Text = "Dashboard General";
         // 
-        // pictureBox2
+        // btnCategoria
         // 
-        pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-        pictureBox2.Location = new Point(56, 21);
-        pictureBox2.Name = "pictureBox2";
-        pictureBox2.Size = new Size(108, 108);
-        pictureBox2.TabIndex = 0;
-        pictureBox2.TabStop = false;
+        btnCategoria.BackColor = Color.FromArgb(62, 39, 35);
+        btnCategoria.BorderRadius = 15;
+        btnCategoria.CustomizableEdges = customizableEdges3;
+        btnCategoria.DisabledState.BorderColor = Color.DarkGray;
+        btnCategoria.DisabledState.CustomBorderColor = Color.DarkGray;
+        btnCategoria.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        btnCategoria.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        btnCategoria.FillColor = Color.FromArgb(62, 39, 35);
+        btnCategoria.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        btnCategoria.ForeColor = Color.White;
+        btnCategoria.HoverState.FillColor = Color.FromArgb(93, 64, 55);
+        btnCategoria.Image = (Image)resources.GetObject("btnCategoria.Image");
+        btnCategoria.ImageAlign = HorizontalAlignment.Left;
+        btnCategoria.ImageSize = new Size(22, 22);
+        btnCategoria.Location = new Point(12, 541);
+        btnCategoria.Name = "btnCategoria";
+        btnCategoria.Padding = new Padding(0, 0, 10, 0);
+        btnCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        btnCategoria.Size = new Size(202, 45);
+        btnCategoria.TabIndex = 13;
+        btnCategoria.Text = "Categorias";
+        btnCategoria.TextAlign = HorizontalAlignment.Right;
+        btnCategoria.TextOffset = new Point(-25, 0);
         // 
         // FrmPrincipal
         // 
@@ -325,9 +355,9 @@ partial class FrmPrincipal
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         pnlMenu.ResumeLayout(false);
         pnlLogo.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         pnlHeader.ResumeLayout(false);
         pnlHeader.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -349,4 +379,5 @@ partial class FrmPrincipal
     private Guna.UI2.WinForms.Guna2Button btnReportes;
     private PictureBox pictureBox1;
     private PictureBox pictureBox2;
+    private Guna.UI2.WinForms.Guna2Button btnCategoria;
 }
