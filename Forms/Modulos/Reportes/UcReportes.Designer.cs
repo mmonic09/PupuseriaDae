@@ -458,10 +458,14 @@
             // 
             // guna2Panel6
             // 
-            guna2Panel6.BackColor = Color.FromArgb(244, 232, 221);
+            guna2Panel6.BackColor = Color.Transparent;
+            guna2Panel6.BorderColor = Color.FromArgb(192, 64, 0);
+            guna2Panel6.BorderRadius = 10;
+            guna2Panel6.BorderThickness = 1;
             guna2Panel6.Controls.Add(guna2HtmlLabel6);
             guna2Panel6.Controls.Add(lblPromedioVenta);
             guna2Panel6.CustomizableEdges = customizableEdges19;
+            guna2Panel6.FillColor = Color.FromArgb(255, 248, 225);
             guna2Panel6.Location = new Point(465, 50);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -492,10 +496,14 @@
             // 
             // guna2Panel5
             // 
-            guna2Panel5.BackColor = Color.FromArgb(244, 232, 221);
+            guna2Panel5.BackColor = Color.Transparent;
+            guna2Panel5.BorderColor = Color.FromArgb(192, 64, 0);
+            guna2Panel5.BorderRadius = 10;
+            guna2Panel5.BorderThickness = 1;
             guna2Panel5.Controls.Add(guna2HtmlLabel5);
             guna2Panel5.Controls.Add(lblCantodadVentas);
             guna2Panel5.CustomizableEdges = customizableEdges21;
+            guna2Panel5.FillColor = Color.FromArgb(255, 248, 225);
             guna2Panel5.Location = new Point(240, 50);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -526,10 +534,14 @@
             // 
             // guna2Panel4
             // 
-            guna2Panel4.BackColor = Color.FromArgb(244, 232, 221);
+            guna2Panel4.BackColor = Color.Transparent;
+            guna2Panel4.BorderColor = Color.FromArgb(192, 64, 0);
+            guna2Panel4.BorderRadius = 10;
+            guna2Panel4.BorderThickness = 1;
             guna2Panel4.Controls.Add(guna2HtmlLabel4);
             guna2Panel4.Controls.Add(guna2HtmlLabel3);
             guna2Panel4.CustomizableEdges = customizableEdges23;
+            guna2Panel4.FillColor = Color.FromArgb(255, 248, 225);
             guna2Panel4.Location = new Point(15, 50);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges24;
@@ -902,9 +914,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(110, 90);
+            pictureBox1.Location = new Point(121, 99);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(101, 105);
+            pictureBox1.Size = new Size(88, 105);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
