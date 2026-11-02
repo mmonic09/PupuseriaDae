@@ -31,6 +31,8 @@ partial class FrmPrincipal
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -39,14 +41,15 @@ partial class FrmPrincipal
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         pnlUsuario = new Panel();
         pictureBox1 = new PictureBox();
         lblRol = new Label();
         label1 = new Label();
         btnProductos = new Guna.UI2.WinForms.Guna2Button();
         pnlMenu = new Panel();
+        btnCategoria = new Guna.UI2.WinForms.Guna2Button();
         btnReportes = new Guna.UI2.WinForms.Guna2Button();
         btnConsultaVentas = new Guna.UI2.WinForms.Guna2Button();
         btnVentas = new Guna.UI2.WinForms.Guna2Button();
@@ -55,8 +58,8 @@ partial class FrmPrincipal
         pictureBox2 = new PictureBox();
         pnlContenido = new Panel();
         pnlHeader = new Panel();
+        btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
         lblHeaderTitulo = new Label();
-        btnCategoria = new Guna.UI2.WinForms.Guna2Button();
         pnlUsuario.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         pnlMenu.SuspendLayout();
@@ -151,6 +154,32 @@ partial class FrmPrincipal
         pnlMenu.Name = "pnlMenu";
         pnlMenu.Size = new Size(231, 696);
         pnlMenu.TabIndex = 0;
+        // 
+        // btnCategoria
+        // 
+        btnCategoria.BackColor = Color.FromArgb(62, 39, 35);
+        btnCategoria.BorderRadius = 15;
+        btnCategoria.CustomizableEdges = customizableEdges3;
+        btnCategoria.DisabledState.BorderColor = Color.DarkGray;
+        btnCategoria.DisabledState.CustomBorderColor = Color.DarkGray;
+        btnCategoria.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        btnCategoria.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        btnCategoria.FillColor = Color.FromArgb(62, 39, 35);
+        btnCategoria.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        btnCategoria.ForeColor = Color.White;
+        btnCategoria.HoverState.FillColor = Color.FromArgb(93, 64, 55);
+        btnCategoria.Image = (Image)resources.GetObject("btnCategoria.Image");
+        btnCategoria.ImageAlign = HorizontalAlignment.Left;
+        btnCategoria.ImageSize = new Size(22, 22);
+        btnCategoria.Location = new Point(12, 541);
+        btnCategoria.Name = "btnCategoria";
+        btnCategoria.Padding = new Padding(0, 0, 10, 0);
+        btnCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        btnCategoria.Size = new Size(202, 45);
+        btnCategoria.TabIndex = 13;
+        btnCategoria.Text = "Categorias";
+        btnCategoria.TextAlign = HorizontalAlignment.Right;
+        btnCategoria.TextOffset = new Point(-25, 0);
         // 
         // btnReportes
         // 
@@ -293,6 +322,7 @@ partial class FrmPrincipal
         // pnlHeader
         // 
         pnlHeader.BackColor = Color.White;
+        pnlHeader.Controls.Add(btnCerrarSesion);
         pnlHeader.Controls.Add(lblHeaderTitulo);
         pnlHeader.Dock = DockStyle.Top;
         pnlHeader.Location = new Point(231, 0);
@@ -300,42 +330,42 @@ partial class FrmPrincipal
         pnlHeader.Size = new Size(1119, 88);
         pnlHeader.TabIndex = 2;
         // 
+        // btnCerrarSesion
+        // 
+        btnCerrarSesion.BackColor = Color.Transparent;
+        btnCerrarSesion.BorderRadius = 15;
+        btnCerrarSesion.CustomizableEdges = customizableEdges13;
+        btnCerrarSesion.DisabledState.BorderColor = Color.DarkGray;
+        btnCerrarSesion.DisabledState.CustomBorderColor = Color.DarkGray;
+        btnCerrarSesion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        btnCerrarSesion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        btnCerrarSesion.FillColor = Color.FromArgb(62, 39, 35);
+        btnCerrarSesion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        btnCerrarSesion.ForeColor = Color.White;
+        btnCerrarSesion.HoverState.FillColor = Color.FromArgb(93, 64, 55);
+        btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
+        btnCerrarSesion.ImageAlign = HorizontalAlignment.Left;
+        btnCerrarSesion.ImageOffset = new Point(5, 0);
+        btnCerrarSesion.Location = new Point(889, 21);
+        btnCerrarSesion.Name = "btnCerrarSesion";
+        btnCerrarSesion.Padding = new Padding(0, 0, 10, 0);
+        btnCerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges14;
+        btnCerrarSesion.Size = new Size(183, 45);
+        btnCerrarSesion.TabIndex = 8;
+        btnCerrarSesion.Text = "Cerrar sesión";
+        btnCerrarSesion.TextOffset = new Point(10, 0);
+        btnCerrarSesion.Click += btnCerrarSesion_Click;
+        // 
         // lblHeaderTitulo
         // 
         lblHeaderTitulo.AutoSize = true;
         lblHeaderTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
         lblHeaderTitulo.ForeColor = Color.FromArgb(62, 39, 35);
-        lblHeaderTitulo.Location = new Point(44, 32);
+        lblHeaderTitulo.Location = new Point(62, 34);
         lblHeaderTitulo.Name = "lblHeaderTitulo";
         lblHeaderTitulo.Size = new Size(183, 25);
         lblHeaderTitulo.TabIndex = 0;
         lblHeaderTitulo.Text = "Dashboard General";
-        // 
-        // btnCategoria
-        // 
-        btnCategoria.BackColor = Color.FromArgb(62, 39, 35);
-        btnCategoria.BorderRadius = 15;
-        btnCategoria.CustomizableEdges = customizableEdges3;
-        btnCategoria.DisabledState.BorderColor = Color.DarkGray;
-        btnCategoria.DisabledState.CustomBorderColor = Color.DarkGray;
-        btnCategoria.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-        btnCategoria.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        btnCategoria.FillColor = Color.FromArgb(62, 39, 35);
-        btnCategoria.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-        btnCategoria.ForeColor = Color.White;
-        btnCategoria.HoverState.FillColor = Color.FromArgb(93, 64, 55);
-        btnCategoria.Image = (Image)resources.GetObject("btnCategoria.Image");
-        btnCategoria.ImageAlign = HorizontalAlignment.Left;
-        btnCategoria.ImageSize = new Size(22, 22);
-        btnCategoria.Location = new Point(12, 541);
-        btnCategoria.Name = "btnCategoria";
-        btnCategoria.Padding = new Padding(0, 0, 10, 0);
-        btnCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        btnCategoria.Size = new Size(202, 45);
-        btnCategoria.TabIndex = 13;
-        btnCategoria.Text = "Categorias";
-        btnCategoria.TextAlign = HorizontalAlignment.Right;
-        btnCategoria.TextOffset = new Point(-25, 0);
         // 
         // FrmPrincipal
         // 
@@ -380,4 +410,6 @@ partial class FrmPrincipal
     private PictureBox pictureBox1;
     private PictureBox pictureBox2;
     private Guna.UI2.WinForms.Guna2Button btnCategoria;
+    private Label lblBienvenidoUsuario;
+    private Guna.UI2.WinForms.Guna2Button btnCerrarSesion;
 }
