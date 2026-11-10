@@ -128,6 +128,18 @@
         9cn0tfYB9qI8NFFDd2DkA8z9Gr8tvq2jl/S+AJ4fApk6+N+LAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="idCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colCategoria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colPrecio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtBuscarProducto.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -144,16 +156,6 @@
         gC8Vkw5vu164eOa68n9Jwgnj0MKib7vejwDcY+Yb+p+nabrRenXSukk4YVYEonOFJH4x8yXrUZwwS+ok
         4YJmjTmOn7bGuID1IBBd1Mk1CbsLzrxe6MqzyRtF3RnnjRPmjRPmzR9BtJl1pnuVxQAAAABJRU5ErkJg
         gg==
-</value>
-  </data>
-  <data name="btnNuevoProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADdSURBVFhH7ZdB
-        DoJADEVJ4MSiB1D0bHIGEleCnKL9poILp02mEgMuungs2h/4GTrtTAGgWEAFoguYHy+IGgClocuiAk4O
-        YMYHQG3osqiAC+ZWGWC+Kp0DFXDB3BkGOqVzoAIuwkAYCANhgLk3DNyVzoE8qrm3S3u9ORiMj7+RXKq3
-        aAHsZYAVIDobL1oHopMs56gS6zGKAZnpaWItevkFjZFYB6KjFKGcZOoNinA3FaGxNbL8eBt+zx80ojAQ
-        BsJAGNj4aiaHidTA1NtTXRYVcFLOU1SGzyAHi6XX8yfyoC9Pl5WN3wAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

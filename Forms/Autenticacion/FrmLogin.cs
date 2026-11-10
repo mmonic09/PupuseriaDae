@@ -12,7 +12,6 @@ namespace Pupuseria.Forms
     public partial class FrmLogin : Form
     {
         private readonly UsuarioServicio _servicio = new();
-        private readonly Label _lblMensaje = new();
 
         public FrmLogin()
         {
@@ -28,20 +27,11 @@ namespace Pupuseria.Forms
             txtContrasena.MaxLength = 64;
             txtContrasena.UseSystemPasswordChar = true;
 
-            // Etiqueta del mensaje de error (se crea por código para no tocar el diseñador)
-            _lblMensaje.AutoSize = false;
-            _lblMensaje.Bounds = new Rectangle(684, 490, 310, 24);
-            _lblMensaje.TextAlign = ContentAlignment.MiddleCenter;
-            _lblMensaje.ForeColor = Color.Firebrick;
-            _lblMensaje.BackColor = Color.Transparent;
-            _lblMensaje.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            guna2Panel1.Controls.Add(_lblMensaje);
-
+           
             btnLogin.Click += (_, _) => Ingresar();
             txtUsuario.KeyDown += EnterParaIngresar;
             txtContrasena.KeyDown += EnterParaIngresar;
-            txtUsuario.TextChanged += (_, _) => _lblMensaje.Text = "";
-            txtContrasena.TextChanged += (_, _) => _lblMensaje.Text = "";
+
             chkMostrarContrasena.CheckedChanged += (_, _) =>
                 txtContrasena.UseSystemPasswordChar = !chkMostrarContrasena.Checked;
         }
@@ -112,13 +102,18 @@ namespace Pupuseria.Forms
         private void MostrarCredencialesIncorrectas()
         {
             txtContrasena.Clear();                       // Clear dispara TextChanged y borra el mensaje...
-            _lblMensaje.Text = "Usuario o contraseña incorrectos.";   // ...por eso el mensaje va después
+            lblMensaje.Text = "Usuario o contraseña incorrectos.";   // ...por eso el mensaje va después
             txtContrasena.Focus();
         }
 
         // El diseñador conecta este evento; no lo borre
         private void label2_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
