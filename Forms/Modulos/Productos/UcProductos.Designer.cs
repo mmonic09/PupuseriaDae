@@ -49,10 +49,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             pnlNuevoProducto = new Guna.UI2.WinForms.Guna2Panel();
             guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
@@ -74,9 +76,14 @@
             lblCategoria = new Label();
             txtBuscarProducto = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            btnNuevoProducto = new Guna.UI2.WinForms.Guna2Button();
+            btnEliminar = new Guna.UI2.WinForms.Guna2Button();
+            btnEditarProducto = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
             label1 = new Label();
+            idCol = new DataGridViewTextBoxColumn();
+            colNombre = new DataGridViewTextBoxColumn();
+            colCategoria = new DataGridViewTextBoxColumn();
+            colPrecio = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             pnlNuevoProducto.SuspendLayout();
             pnlDirectorio.SuspendLayout();
@@ -159,6 +166,7 @@
             btnCancelar.Size = new Size(117, 37);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGuardar
             // 
@@ -184,6 +192,7 @@
             btnGuardar.Size = new Size(117, 37);
             btnGuardar.TabIndex = 14;
             btnGuardar.Text = "Guardar";
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // chkEstado
             // 
@@ -210,7 +219,7 @@
             cmbCategoriaProducto.FocusedColor = Color.FromArgb(94, 148, 255);
             cmbCategoriaProducto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cmbCategoriaProducto.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            cmbCategoriaProducto.ForeColor = Color.FromArgb(68, 88, 112);
+            cmbCategoriaProducto.ForeColor = Color.Black;
             cmbCategoriaProducto.ItemHeight = 30;
             cmbCategoriaProducto.Location = new Point(26, 192);
             cmbCategoriaProducto.Name = "cmbCategoriaProducto";
@@ -231,8 +240,10 @@
             txtPrecioUnitario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtPrecioUnitario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPrecioUnitario.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtPrecioUnitario.ForeColor = Color.Black;
             txtPrecioUnitario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPrecioUnitario.Location = new Point(26, 270);
+            txtPrecioUnitario.Margin = new Padding(3, 4, 3, 4);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
             txtPrecioUnitario.PlaceholderText = "";
             txtPrecioUnitario.SelectedText = "";
@@ -275,8 +286,10 @@
             txtNombreProducto.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombreProducto.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreProducto.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtNombreProducto.ForeColor = Color.Black;
             txtNombreProducto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombreProducto.Location = new Point(27, 117);
+            txtNombreProducto.Margin = new Padding(3, 4, 3, 4);
             txtNombreProducto.Name = "txtNombreProducto";
             txtNombreProducto.PlaceholderText = "";
             txtNombreProducto.SelectedText = "";
@@ -356,6 +369,7 @@
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeight = 50;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { idCol, colNombre, colCategoria, colPrecio });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -365,15 +379,17 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvProductos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.EnableHeadersVisualStyles = false;
-            dgvProductos.Location = new Point(22, 78);
+            dgvProductos.Location = new Point(22, 89);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
+            dgvProductos.RowHeadersWidth = 51;
             dgvProductos.RowTemplate.Height = 48;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(679, 389);
             dgvProductos.TabIndex = 24;
+            dgvProductos.CellContentClick += dgvProductos_CellContentClick_1;
             // 
             // cmbCategorias
             // 
@@ -401,7 +417,7 @@
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblCategoria.ForeColor = Color.FromArgb(62, 39, 35);
-            lblCategoria.Location = new Point(460, 32);
+            lblCategoria.Location = new Point(454, 22);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(63, 15);
             lblCategoria.TabIndex = 2;
@@ -425,6 +441,7 @@
             txtBuscarProducto.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtBuscarProducto.IconLeft = (Image)resources.GetObject("txtBuscarProducto.IconLeft");
             txtBuscarProducto.Location = new Point(22, 22);
+            txtBuscarProducto.Margin = new Padding(3, 4, 3, 4);
             txtBuscarProducto.Name = "txtBuscarProducto";
             txtBuscarProducto.PlaceholderText = "";
             txtBuscarProducto.SelectedText = "";
@@ -438,41 +455,68 @@
             guna2Panel1.BorderColor = SystemColors.ButtonShadow;
             guna2Panel1.BorderRadius = 15;
             guna2Panel1.BorderThickness = 1;
-            guna2Panel1.Controls.Add(btnNuevoProducto);
+            guna2Panel1.Controls.Add(btnEliminar);
+            guna2Panel1.Controls.Add(btnEditarProducto);
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.CustomBorderColor = SystemColors.ButtonShadow;
-            guna2Panel1.CustomizableEdges = customizableEdges21;
+            guna2Panel1.CustomizableEdges = customizableEdges23;
             guna2Panel1.FillColor = Color.White;
             guna2Panel1.Location = new Point(20, 23);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2Panel1.Size = new Size(1077, 100);
             guna2Panel1.TabIndex = 0;
             // 
-            // btnNuevoProducto
+            // btnEliminar
             // 
-            btnNuevoProducto.BackColor = Color.White;
-            btnNuevoProducto.BorderRadius = 10;
-            btnNuevoProducto.Cursor = Cursors.Hand;
-            btnNuevoProducto.CustomizableEdges = customizableEdges19;
-            btnNuevoProducto.DisabledState.BorderColor = Color.DarkGray;
-            btnNuevoProducto.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnNuevoProducto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnNuevoProducto.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnNuevoProducto.FillColor = Color.FromArgb(230, 81, 0);
-            btnNuevoProducto.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnNuevoProducto.ForeColor = Color.White;
-            btnNuevoProducto.Image = (Image)resources.GetObject("btnNuevoProducto.Image");
-            btnNuevoProducto.ImageAlign = HorizontalAlignment.Left;
-            btnNuevoProducto.ImageSize = new Size(15, 15);
-            btnNuevoProducto.Location = new Point(864, 30);
-            btnNuevoProducto.Name = "btnNuevoProducto";
-            btnNuevoProducto.Padding = new Padding(25, 0, 0, 0);
-            btnNuevoProducto.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnNuevoProducto.Size = new Size(180, 40);
-            btnNuevoProducto.TabIndex = 2;
-            btnNuevoProducto.Text = "Nuevo Producto";
+            btnEliminar.BackColor = Color.White;
+            btnEliminar.BorderRadius = 10;
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.CustomizableEdges = customizableEdges19;
+            btnEliminar.DisabledState.BorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEliminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEliminar.FillColor = Color.FromArgb(230, 81, 0);
+            btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Image = Properties.Resources.basura__1_;
+            btnEliminar.ImageAlign = HorizontalAlignment.Left;
+            btnEliminar.ImageSize = new Size(15, 15);
+            btnEliminar.Location = new Point(657, 30);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Padding = new Padding(25, 0, 0, 0);
+            btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnEliminar.Size = new Size(180, 40);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar producto";
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnEditarProducto
+            // 
+            btnEditarProducto.BackColor = Color.White;
+            btnEditarProducto.BorderRadius = 10;
+            btnEditarProducto.Cursor = Cursors.Hand;
+            btnEditarProducto.CustomizableEdges = customizableEdges21;
+            btnEditarProducto.DisabledState.BorderColor = Color.DarkGray;
+            btnEditarProducto.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEditarProducto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEditarProducto.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEditarProducto.FillColor = Color.FromArgb(230, 81, 0);
+            btnEditarProducto.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEditarProducto.ForeColor = Color.White;
+            btnEditarProducto.Image = Properties.Resources.lapiz__2_;
+            btnEditarProducto.ImageAlign = HorizontalAlignment.Left;
+            btnEditarProducto.ImageSize = new Size(15, 15);
+            btnEditarProducto.Location = new Point(864, 30);
+            btnEditarProducto.Name = "btnEditarProducto";
+            btnEditarProducto.Padding = new Padding(25, 0, 0, 0);
+            btnEditarProducto.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnEditarProducto.Size = new Size(180, 40);
+            btnEditarProducto.TabIndex = 2;
+            btnEditarProducto.Text = "Editar producto";
+            btnEditarProducto.Click += btnEditarProducto_Click;
             // 
             // label2
             // 
@@ -495,6 +539,34 @@
             label1.Size = new Size(346, 28);
             label1.TabIndex = 0;
             label1.Text = "Catálogo e inventario de productos";
+            // 
+            // idCol
+            // 
+            idCol.HeaderText = "ID";
+            idCol.MinimumWidth = 6;
+            idCol.Name = "idCol";
+            idCol.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            colNombre.HeaderText = "Nombre del producto";
+            colNombre.MinimumWidth = 6;
+            colNombre.Name = "colNombre";
+            colNombre.ReadOnly = true;
+            // 
+            // colCategoria
+            // 
+            colCategoria.HeaderText = "Categoría";
+            colCategoria.MinimumWidth = 6;
+            colCategoria.Name = "colCategoria";
+            colCategoria.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            colPrecio.HeaderText = "Precio ($)";
+            colPrecio.MinimumWidth = 6;
+            colPrecio.Name = "colPrecio";
+            colPrecio.ReadOnly = true;
             // 
             // UcProductos
             // 
@@ -522,7 +594,7 @@
         private Label lblCategoria;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarProducto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnNuevoProducto;
+        private Guna.UI2.WinForms.Guna2Button btnEditarProducto;
         private Label label2;
         private Label label1;
         private Label label4;
@@ -540,5 +612,10 @@
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private CheckBox chkEstado;
         private DataGridView dgvProductos;
+        private Guna.UI2.WinForms.Guna2Button btnEliminar;
+        private DataGridViewTextBoxColumn idCol;
+        private DataGridViewTextBoxColumn colNombre;
+        private DataGridViewTextBoxColumn colCategoria;
+        private DataGridViewTextBoxColumn colPrecio;
     }
 }

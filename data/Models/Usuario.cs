@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Pupuseria.data.Models;
 using System;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -19,6 +20,9 @@ namespace Pupuseria.data.entidades
         public bool Activo { get; set; }
 
         public Rol Rol { get; set; } = null!;
+
+        public ICollection<Venta> Ventas { get; set; }
+            = new List<Venta>();
 
         // Solo lectura: EF Core no la guarda en la base de datos
         public string NombreCompleto => $"{Nombre} {Apellido}";

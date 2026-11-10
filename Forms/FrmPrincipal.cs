@@ -26,7 +26,10 @@ namespace Pupuseria.Forms
 
             label1.Text = u.NombreCompleto;                 // antes: "Nombre Empleado"
             lblRol.Text = u.Rol.Nombre;                     // antes: "Administrador / Cajero"
-            btnUsuarios.Visible = Sesion.EsAdministrador;   // módulo exclusivo del administrador
+            btnUsuarios.Enabled = Sesion.EsAdministrador;   // módulo exclusivo del administrador
+            btnProductos.Enabled = Sesion.EsAdministrador;
+            btnReportes.Enabled = Sesion.EsAdministrador;
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -49,6 +52,9 @@ namespace Pupuseria.Forms
         private void btnConsultaVentas_Click(object sender, EventArgs e) => AbrirModulo(new UcConsultaVentas(), "Consulta de Ventas");
         private void btnVentas_Click(object sender, EventArgs e) => AbrirModulo(new UcVentas(), "Nueva venta");
         private void btnReportes_Click(object sender, EventArgs e) => AbrirModulo(new UcReportes(), "Reportes del sistema");
+        private void btnCategoria_Click(object sender, EventArgs e) => AbrirModulo(new UcCategorias(), "Gestion de categorias");
+
+        //private void btnCategoria_Click 
 
 
         //cerrar sesion
@@ -67,5 +73,6 @@ namespace Pupuseria.Forms
                 this.Close();
             }
         }
+
     }
 }

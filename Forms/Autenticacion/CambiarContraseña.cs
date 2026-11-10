@@ -46,15 +46,15 @@ namespace Pupuseria.Autenticacion
                 primero ??= control;
             }
 
-            var errorNueva = Validacion.Clave(_txtNueva.Text);
-            if (errorNueva == null && Seguridad.Hash(_txtNueva.Text) == _usuario.ClaveHash)
+            var errorNueva = Validacion.Clave(txtContrasenaNueva.Text);
+            if (errorNueva == null && Seguridad.Hash(txtContrasenaNueva.Text) == _usuario.ClaveHash)
                 errorNueva = "debe ser distinta de la contraseña temporal.";
-            Fallo(_txtNueva, "Nueva contraseña", errorNueva);
+            Fallo(txtContrasenaNueva, "Nueva contraseña", errorNueva);
 
-            if (_txtConfirmar.Text.Length == 0)
-                Fallo(_txtConfirmar, "Confirmar nueva contraseña", "repita la nueva contraseña.");
-            else if (_txtConfirmar.Text != _txtNueva.Text)
-                Fallo(_txtConfirmar, "Confirmar nueva contraseña", "no coincide con la nueva contraseña.");
+            if (txtConfirmacion.Text.Length == 0)
+                Fallo(txtConfirmacion, "Confirmar nueva contraseña", "repita la nueva contraseña.");
+            else if (txtConfirmacion.Text != txtContrasenaNueva.Text)
+                Fallo(txtConfirmacion, "Confirmar nueva contraseña", "no coincide con la nueva contraseña.");
 
             if (fallos.Count > 0)
             {
@@ -65,7 +65,7 @@ namespace Pupuseria.Autenticacion
 
             try
             {
-                _servicio.CambiarClave(_usuario.IdUsuario, _txtNueva.Text);
+                _servicio.CambiarClave(_usuario.IdUsuario, txtContrasenaNueva.Text);
                 Mensajes.Info("Contraseña actualizada correctamente.");
                 DialogResult = DialogResult.OK;
             }

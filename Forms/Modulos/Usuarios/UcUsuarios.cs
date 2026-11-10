@@ -131,7 +131,7 @@ namespace Pupuseria.Modulos
             ReadOnly = true
         };
 
-        // ============================ DATOS ============================
+        //  DATOS
         private void CargarRoles()
         {
             cmbRol.DisplayMember = nameof(Rol.Nombre);
@@ -172,7 +172,7 @@ namespace Pupuseria.Modulos
         private UsuarioFila? FilaSeleccionada() =>
             dgvUsuarios.SelectedRows.Count > 0 ? dgvUsuarios.SelectedRows[0].DataBoundItem as UsuarioFila : null;
 
-        // ============================ FORMULARIO ============================
+        // FORMULARIO 
         private void LimpiarFormulario()
         {
             _idEditando = 0;
@@ -234,7 +234,7 @@ namespace Pupuseria.Modulos
             }
         }
 
-        // ============================ VALIDACIÓN ============================
+        // VALIDACIÓN 
         // Marca cada campo con error y muestra un mensaje que dice EXACTAMENTE cuáles fallaron
         private bool ValidarFormulario()
         {
@@ -291,7 +291,7 @@ namespace Pupuseria.Modulos
             return false;
         }
 
-        // ============================ ACCIONES ============================
+        // ACCIONES 
         private void btnGuardar_Click(object? sender, EventArgs e)
         {
             try
@@ -348,8 +348,8 @@ namespace Pupuseria.Modulos
             }
 
             if (!Mensajes.Confirmar($"¿Desactivar al usuario «{fila.NombreUsuario}»?\n\n" +
-                                    "No se borra: se conserva su historial de ventas y podrá reactivarlo después " +
-                                    "(Editar seleccionado → Estado → Guardar cambios)."))
+                                    "Se conserva su historial de ventas y podrá reactivarlo después "
+                                    ))
                 return;
 
             try
@@ -364,7 +364,7 @@ namespace Pupuseria.Modulos
             }
         }
 
-        // ============================ UTILIDADES ============================
+        // UTILIDADES 
         // Quita de la caja los caracteres no permitidos (por ejemplo, números pegados con Ctrl+V)
         private static void Depurar(Guna2TextBox caja, Func<char, bool> permitido)
         {

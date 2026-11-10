@@ -74,7 +74,7 @@ partial class FrmPrincipal
         pnlUsuario.Controls.Add(lblRol);
         pnlUsuario.Controls.Add(label1);
         pnlUsuario.Dock = DockStyle.Bottom;
-        pnlUsuario.Location = new Point(0, 616);
+        pnlUsuario.Location = new Point(0, 648);
         pnlUsuario.Name = "pnlUsuario";
         pnlUsuario.Size = new Size(231, 80);
         pnlUsuario.TabIndex = 1;
@@ -82,7 +82,7 @@ partial class FrmPrincipal
         // pictureBox1
         // 
         pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-        pictureBox1.Location = new Point(28, 20);
+        pictureBox1.Location = new Point(28, 17);
         pictureBox1.Name = "pictureBox1";
         pictureBox1.Size = new Size(33, 33);
         pictureBox1.TabIndex = 2;
@@ -93,7 +93,7 @@ partial class FrmPrincipal
         lblRol.AutoSize = true;
         lblRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
         lblRol.ForeColor = Color.White;
-        lblRol.Location = new Point(80, 42);
+        lblRol.Location = new Point(72, 36);
         lblRol.Name = "lblRol";
         lblRol.Size = new Size(132, 15);
         lblRol.TabIndex = 1;
@@ -104,7 +104,7 @@ partial class FrmPrincipal
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
         label1.ForeColor = Color.White;
-        label1.Location = new Point(80, 15);
+        label1.Location = new Point(73, 15);
         label1.Name = "label1";
         label1.Size = new Size(110, 15);
         label1.TabIndex = 0;
@@ -126,11 +126,11 @@ partial class FrmPrincipal
         btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
         btnProductos.ImageAlign = HorizontalAlignment.Left;
         btnProductos.ImageSize = new Size(22, 22);
-        btnProductos.Location = new Point(12, 201);
+        btnProductos.Location = new Point(12, 270);
         btnProductos.Name = "btnProductos";
         btnProductos.Padding = new Padding(0, 0, 10, 0);
         btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        btnProductos.Size = new Size(202, 45);
+        btnProductos.Size = new Size(190, 45);
         btnProductos.TabIndex = 7;
         btnProductos.Text = "Gestión Productos";
         btnProductos.TextAlign = HorizontalAlignment.Right;
@@ -152,7 +152,7 @@ partial class FrmPrincipal
         pnlMenu.Location = new Point(0, 0);
         pnlMenu.Margin = new Padding(3, 2, 3, 2);
         pnlMenu.Name = "pnlMenu";
-        pnlMenu.Size = new Size(231, 696);
+        pnlMenu.Size = new Size(231, 728);
         pnlMenu.TabIndex = 0;
         // 
         // btnCategoria
@@ -171,15 +171,16 @@ partial class FrmPrincipal
         btnCategoria.Image = (Image)resources.GetObject("btnCategoria.Image");
         btnCategoria.ImageAlign = HorizontalAlignment.Left;
         btnCategoria.ImageSize = new Size(22, 22);
-        btnCategoria.Location = new Point(12, 541);
+        btnCategoria.Location = new Point(12, 513);
         btnCategoria.Name = "btnCategoria";
         btnCategoria.Padding = new Padding(0, 0, 10, 0);
         btnCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        btnCategoria.Size = new Size(202, 45);
+        btnCategoria.Size = new Size(190, 45);
         btnCategoria.TabIndex = 13;
         btnCategoria.Text = "Categorias";
         btnCategoria.TextAlign = HorizontalAlignment.Right;
         btnCategoria.TextOffset = new Point(-25, 0);
+        btnCategoria.Click += btnCategoria_Click;
         // 
         // btnReportes
         // 
@@ -197,11 +198,11 @@ partial class FrmPrincipal
         btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
         btnReportes.ImageAlign = HorizontalAlignment.Left;
         btnReportes.ImageSize = new Size(22, 22);
-        btnReportes.Location = new Point(12, 475);
+        btnReportes.Location = new Point(12, 452);
         btnReportes.Name = "btnReportes";
         btnReportes.Padding = new Padding(0, 0, 10, 0);
         btnReportes.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        btnReportes.Size = new Size(202, 45);
+        btnReportes.Size = new Size(190, 45);
         btnReportes.TabIndex = 12;
         btnReportes.Text = "Reportes Generales";
         btnReportes.TextAlign = HorizontalAlignment.Right;
@@ -224,11 +225,11 @@ partial class FrmPrincipal
         btnConsultaVentas.Image = (Image)resources.GetObject("btnConsultaVentas.Image");
         btnConsultaVentas.ImageAlign = HorizontalAlignment.Left;
         btnConsultaVentas.ImageSize = new Size(22, 22);
-        btnConsultaVentas.Location = new Point(12, 409);
+        btnConsultaVentas.Location = new Point(12, 392);
         btnConsultaVentas.Name = "btnConsultaVentas";
         btnConsultaVentas.Padding = new Padding(0, 0, 10, 0);
         btnConsultaVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        btnConsultaVentas.Size = new Size(202, 45);
+        btnConsultaVentas.Size = new Size(190, 45);
         btnConsultaVentas.TabIndex = 11;
         btnConsultaVentas.Text = "Consulta de Ventas";
         btnConsultaVentas.TextAlign = HorizontalAlignment.Right;
@@ -251,11 +252,11 @@ partial class FrmPrincipal
         btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
         btnVentas.ImageAlign = HorizontalAlignment.Left;
         btnVentas.ImageSize = new Size(22, 22);
-        btnVentas.Location = new Point(12, 340);
+        btnVentas.Location = new Point(12, 330);
         btnVentas.Name = "btnVentas";
         btnVentas.Padding = new Padding(0, 0, 10, 0);
         btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        btnVentas.Size = new Size(202, 45);
+        btnVentas.Size = new Size(192, 45);
         btnVentas.TabIndex = 10;
         btnVentas.Text = "Punto de Venta";
         btnVentas.TextAlign = HorizontalAlignment.Right;
@@ -278,11 +279,11 @@ partial class FrmPrincipal
         btnUsuarios.Image = (Image)resources.GetObject("btnUsuarios.Image");
         btnUsuarios.ImageAlign = HorizontalAlignment.Left;
         btnUsuarios.ImageSize = new Size(22, 22);
-        btnUsuarios.Location = new Point(12, 273);
+        btnUsuarios.Location = new Point(12, 210);
         btnUsuarios.Name = "btnUsuarios";
         btnUsuarios.Padding = new Padding(0, 0, 10, 0);
         btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        btnUsuarios.Size = new Size(202, 45);
+        btnUsuarios.Size = new Size(190, 45);
         btnUsuarios.TabIndex = 9;
         btnUsuarios.Text = "Gestión Usuarios";
         btnUsuarios.TextAlign = HorizontalAlignment.Right;
@@ -316,7 +317,7 @@ partial class FrmPrincipal
         pnlContenido.Location = new Point(231, 88);
         pnlContenido.Margin = new Padding(3, 2, 3, 2);
         pnlContenido.Name = "pnlContenido";
-        pnlContenido.Size = new Size(1119, 608);
+        pnlContenido.Size = new Size(1092, 640);
         pnlContenido.TabIndex = 1;
         // 
         // pnlHeader
@@ -327,7 +328,7 @@ partial class FrmPrincipal
         pnlHeader.Dock = DockStyle.Top;
         pnlHeader.Location = new Point(231, 0);
         pnlHeader.Name = "pnlHeader";
-        pnlHeader.Size = new Size(1119, 88);
+        pnlHeader.Size = new Size(1092, 88);
         pnlHeader.TabIndex = 2;
         // 
         // btnCerrarSesion
@@ -372,7 +373,7 @@ partial class FrmPrincipal
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(251, 249, 246);
-        ClientSize = new Size(1350, 696);
+        ClientSize = new Size(1323, 728);
         Controls.Add(pnlContenido);
         Controls.Add(pnlHeader);
         Controls.Add(pnlMenu);
