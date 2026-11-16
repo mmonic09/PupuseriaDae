@@ -255,7 +255,7 @@ namespace Pupuseria.Modulos
 
             var errorUsuario = Validacion.NombreUsuario(txtUsuario.Text);
             if (errorUsuario == null && _servicio.ExisteNombreUsuario(txtUsuario.Text.Trim(), _idEditando))
-                errorUsuario = "ya existe otro usuario con ese nombre. Elija uno distinto.";
+                errorUsuario = "ya existe otro usuario con ese nombre.";
             Fallo(txtUsuario, "Usuario", errorUsuario);
 
             var rol = cmbRol.SelectedItem as Rol;
@@ -286,10 +286,12 @@ namespace Pupuseria.Modulos
 
             if (fallos.Count == 0) return true;
 
-            Mensajes.Aviso("Corrija los siguientes campos:\n\n" + string.Join("\n", fallos.Select(f => f.Mensaje)));
+            Mensajes.Aviso("Verifique los campos:\n\n" + string.Join("\n", fallos.Select(f => f.Mensaje)));
             fallos[0].Control.Focus();
             return false;
         }
+
+
 
         // ACCIONES 
         private void btnGuardar_Click(object? sender, EventArgs e)
@@ -325,6 +327,8 @@ namespace Pupuseria.Modulos
                 Mensajes.ErrorDeDatos(ex);
             }
         }
+
+
 
         private void btnEliminar_Click(object? sender, EventArgs e)
         {

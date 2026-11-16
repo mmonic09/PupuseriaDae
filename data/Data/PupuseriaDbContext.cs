@@ -133,9 +133,6 @@ namespace Pupuseria.data.contexto
                     .HasMaxLength(50)
                     .IsRequired();
 
-                e.Property(c => c.Descripcion)
-                    .HasMaxLength(100);
-
                 e.Property(c => c.Activo)
                     .HasDefaultValue(true);
 

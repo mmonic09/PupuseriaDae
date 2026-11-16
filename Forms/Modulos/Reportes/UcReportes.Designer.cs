@@ -43,9 +43,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,8 +61,7 @@
             dtpFechaInicialReporte = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblRangoFechas = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            chtGraficaProductosVendidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            dgvReporteVentas = new DataGridView();
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             lblProductoEstrella = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTotalOrdenes = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -76,7 +74,7 @@
             guna2Panel2.SuspendLayout();
             pnlFechas.SuspendLayout();
             guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chtGraficaProductosVendidos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReporteVentas).BeginInit();
             guna2Panel7.SuspendLayout();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -257,8 +255,7 @@
             guna2Panel3.BorderColor = Color.FromArgb(215, 204, 200);
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.BorderThickness = 1;
-            guna2Panel3.Controls.Add(chtGraficaProductosVendidos);
-            guna2Panel3.Controls.Add(guna2HtmlLabel3);
+            guna2Panel3.Controls.Add(dgvReporteVentas);
             guna2Panel3.Controls.Add(guna2Panel7);
             guna2Panel3.Controls.Add(lblResumen);
             guna2Panel3.CustomizableEdges = customizableEdges15;
@@ -268,37 +265,43 @@
             guna2Panel3.Size = new Size(1028, 518);
             guna2Panel3.TabIndex = 3;
             // 
-            // chtGraficaProductosVendidos
+            // dgvReporteVentas
             // 
-            chartArea1.Name = "ChartArea1";
-            chtGraficaProductosVendidos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chtGraficaProductosVendidos.Legends.Add(legend1);
-            chtGraficaProductosVendidos.Location = new Point(40, 221);
-            chtGraficaProductosVendidos.Name = "chtGraficaProductosVendidos";
-            chtGraficaProductosVendidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            chtGraficaProductosVendidos.PaletteCustomColors = new Color[]
-    {
-    Color.FromArgb(230, 81, 0)
-    };
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chtGraficaProductosVendidos.Series.Add(series1);
-            chtGraficaProductosVendidos.Size = new Size(948, 267);
-            chtGraficaProductosVendidos.TabIndex = 7;
-            chtGraficaProductosVendidos.Text = "chart1";
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            guna2HtmlLabel3.ForeColor = Color.FromArgb(62, 39, 35);
-            guna2HtmlLabel3.Location = new Point(40, 192);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(258, 23);
-            guna2HtmlLabel3.TabIndex = 6;
-            guna2HtmlLabel3.Text = "Ventas por categoría de producto";
+            dgvReporteVentas.AllowUserToAddRows = false;
+            dgvReporteVentas.AllowUserToDeleteRows = false;
+            dgvReporteVentas.AllowUserToResizeRows = false;
+            dgvReporteVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvReporteVentas.BackgroundColor = Color.White;
+            dgvReporteVentas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvReporteVentas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(62, 39, 35);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(62, 39, 35);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvReporteVentas.ColumnHeadersHeight = 50;
+            dgvReporteVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(250, 243, 235);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvReporteVentas.EnableHeadersVisualStyles = false;
+            dgvReporteVentas.Location = new Point(39, 166);
+            dgvReporteVentas.MultiSelect = false;
+            dgvReporteVentas.Name = "dgvReporteVentas";
+            dgvReporteVentas.ReadOnly = true;
+            dgvReporteVentas.RowHeadersVisible = false;
+            dgvReporteVentas.RowTemplate.Height = 48;
+            dgvReporteVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvReporteVentas.Size = new Size(949, 335);
+            dgvReporteVentas.TabIndex = 24;
             // 
             // guna2Panel7
             // 
@@ -317,7 +320,7 @@
             guna2Panel7.Location = new Point(40, 60);
             guna2Panel7.Name = "guna2Panel7";
             guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel7.Size = new Size(948, 100);
+            guna2Panel7.Size = new Size(948, 90);
             guna2Panel7.TabIndex = 5;
             // 
             // lblProductoEstrella
@@ -325,7 +328,7 @@
             lblProductoEstrella.BackColor = Color.Transparent;
             lblProductoEstrella.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblProductoEstrella.ForeColor = Color.FromArgb(230, 81, 0);
-            lblProductoEstrella.Location = new Point(707, 45);
+            lblProductoEstrella.Location = new Point(686, 42);
             lblProductoEstrella.Name = "lblProductoEstrella";
             lblProductoEstrella.Size = new Size(75, 32);
             lblProductoEstrella.TabIndex = 3;
@@ -336,7 +339,7 @@
             lblTotalOrdenes.BackColor = Color.Transparent;
             lblTotalOrdenes.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTotalOrdenes.ForeColor = Color.FromArgb(62, 39, 35);
-            lblTotalOrdenes.Location = new Point(443, 45);
+            lblTotalOrdenes.Location = new Point(443, 42);
             lblTotalOrdenes.Name = "lblTotalOrdenes";
             lblTotalOrdenes.Size = new Size(15, 32);
             lblTotalOrdenes.TabIndex = 3;
@@ -347,7 +350,7 @@
             lblTituloProductoEstrella.BackColor = Color.Transparent;
             lblTituloProductoEstrella.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
             lblTituloProductoEstrella.ForeColor = Color.Gray;
-            lblTituloProductoEstrella.Location = new Point(675, 17);
+            lblTituloProductoEstrella.Location = new Point(675, 14);
             lblTituloProductoEstrella.Name = "lblTituloProductoEstrella";
             lblTituloProductoEstrella.Size = new Size(132, 22);
             lblTituloProductoEstrella.TabIndex = 3;
@@ -358,7 +361,7 @@
             lblIngresoTotal.BackColor = Color.Transparent;
             lblIngresoTotal.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblIngresoTotal.ForeColor = Color.Green;
-            lblIngresoTotal.Location = new Point(137, 45);
+            lblIngresoTotal.Location = new Point(137, 42);
             lblIngresoTotal.Name = "lblIngresoTotal";
             lblIngresoTotal.Size = new Size(57, 32);
             lblIngresoTotal.TabIndex = 3;
@@ -369,7 +372,7 @@
             lblTituloOrdenes.BackColor = Color.Transparent;
             lblTituloOrdenes.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
             lblTituloOrdenes.ForeColor = Color.Gray;
-            lblTituloOrdenes.Location = new Point(372, 17);
+            lblTituloOrdenes.Location = new Point(372, 14);
             lblTituloOrdenes.Name = "lblTituloOrdenes";
             lblTituloOrdenes.Size = new Size(149, 22);
             lblTituloOrdenes.TabIndex = 3;
@@ -380,7 +383,7 @@
             lblTituloTotalIngreso.BackColor = Color.Transparent;
             lblTituloTotalIngreso.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
             lblTituloTotalIngreso.ForeColor = Color.Gray;
-            lblTituloTotalIngreso.Location = new Point(117, 17);
+            lblTituloTotalIngreso.Location = new Point(117, 14);
             lblTituloTotalIngreso.Name = "lblTituloTotalIngreso";
             lblTituloTotalIngreso.Size = new Size(100, 22);
             lblTituloTotalIngreso.TabIndex = 3;
@@ -426,7 +429,7 @@
             pnlFechas.PerformLayout();
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chtGraficaProductosVendidos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReporteVentas).EndInit();
             guna2Panel7.ResumeLayout(false);
             guna2Panel7.PerformLayout();
             guna2Panel1.ResumeLayout(false);
@@ -456,7 +459,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnExportarPdfReporte;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtGraficaProductosVendidos;
+        private DataGridView dgvReporteVentas;
     }
 }

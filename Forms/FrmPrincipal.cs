@@ -19,22 +19,40 @@ namespace Pupuseria.Forms
             MostrarDatosDeSesion();
         }
 
+
+
+
         private void MostrarDatosDeSesion()
         {
             var u = Sesion.UsuarioActual;
             if (u == null) return;
 
-            label1.Text = u.NombreCompleto;                 // antes: "Nombre Empleado"
-            lblRol.Text = u.Rol.Nombre;                     // antes: "Administrador / Cajero"
-            btnUsuarios.Enabled = Sesion.EsAdministrador;   // módulo exclusivo del administrador
-            btnProductos.Enabled = Sesion.EsAdministrador;
-            btnReportes.Enabled = Sesion.EsAdministrador;
+            label1.Text = u.NombreCompleto;
+            lblRol.Text = u.Rol.Nombre;
+
+            bool esAdmin = Sesion.EsAdministrador;
+
+            // Visibles para todos los roles
+            btnVentas.Visible = true;
+            btnConsultaVentas.Visible = true;
+            btnReportes.Visible = true;
+
+            // Solo para el administrador (el cajero no los ve)
+            btnUsuarios.Visible = esAdmin;
+            btnProductos.Visible = esAdmin;
+            btnCategoria.Visible = esAdmin;
 
         }
+
+
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
         }
+
+
+
 
         private void AbrirModulo(UserControl modulo, string titulo)
         {
@@ -47,6 +65,9 @@ namespace Pupuseria.Forms
             modulo.BringToFront();
         }
 
+
+
+
         private void btnProductos_Click_1(object sender, EventArgs e) => AbrirModulo(new UcProductos(), "Gestion de Productos");
         private void btnUsuarios_Click(object sender, EventArgs e) => AbrirModulo(new UcUsuarios(), "Gestion de Usuarios");
         private void btnConsultaVentas_Click(object sender, EventArgs e) => AbrirModulo(new UcConsultaVentas(), "Consulta de Ventas");
@@ -55,6 +76,9 @@ namespace Pupuseria.Forms
         private void btnCategoria_Click(object sender, EventArgs e) => AbrirModulo(new UcCategorias(), "Gestion de categorias");
 
         //private void btnCategoria_Click 
+
+
+
 
 
         //cerrar sesion

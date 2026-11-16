@@ -126,7 +126,7 @@ partial class FrmPrincipal
         btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
         btnProductos.ImageAlign = HorizontalAlignment.Left;
         btnProductos.ImageSize = new Size(22, 22);
-        btnProductos.Location = new Point(12, 270);
+        btnProductos.Location = new Point(14, 482);
         btnProductos.Name = "btnProductos";
         btnProductos.Padding = new Padding(0, 0, 10, 0);
         btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -171,7 +171,7 @@ partial class FrmPrincipal
         btnCategoria.Image = (Image)resources.GetObject("btnCategoria.Image");
         btnCategoria.ImageAlign = HorizontalAlignment.Left;
         btnCategoria.ImageSize = new Size(22, 22);
-        btnCategoria.Location = new Point(12, 513);
+        btnCategoria.Location = new Point(14, 533);
         btnCategoria.Name = "btnCategoria";
         btnCategoria.Padding = new Padding(0, 0, 10, 0);
         btnCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -198,11 +198,11 @@ partial class FrmPrincipal
         btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
         btnReportes.ImageAlign = HorizontalAlignment.Left;
         btnReportes.ImageSize = new Size(22, 22);
-        btnReportes.Location = new Point(12, 452);
+        btnReportes.Location = new Point(12, 351);
         btnReportes.Name = "btnReportes";
         btnReportes.Padding = new Padding(0, 0, 10, 0);
         btnReportes.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        btnReportes.Size = new Size(190, 45);
+        btnReportes.Size = new Size(192, 45);
         btnReportes.TabIndex = 12;
         btnReportes.Text = "Reportes Generales";
         btnReportes.TextAlign = HorizontalAlignment.Right;
@@ -225,7 +225,7 @@ partial class FrmPrincipal
         btnConsultaVentas.Image = (Image)resources.GetObject("btnConsultaVentas.Image");
         btnConsultaVentas.ImageAlign = HorizontalAlignment.Left;
         btnConsultaVentas.ImageSize = new Size(22, 22);
-        btnConsultaVentas.Location = new Point(12, 392);
+        btnConsultaVentas.Location = new Point(14, 284);
         btnConsultaVentas.Name = "btnConsultaVentas";
         btnConsultaVentas.Padding = new Padding(0, 0, 10, 0);
         btnConsultaVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -252,11 +252,11 @@ partial class FrmPrincipal
         btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
         btnVentas.ImageAlign = HorizontalAlignment.Left;
         btnVentas.ImageSize = new Size(22, 22);
-        btnVentas.Location = new Point(12, 330);
+        btnVentas.Location = new Point(14, 216);
         btnVentas.Name = "btnVentas";
         btnVentas.Padding = new Padding(0, 0, 10, 0);
         btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        btnVentas.Size = new Size(192, 45);
+        btnVentas.Size = new Size(190, 45);
         btnVentas.TabIndex = 10;
         btnVentas.Text = "Punto de Venta";
         btnVentas.TextAlign = HorizontalAlignment.Right;
@@ -279,7 +279,7 @@ partial class FrmPrincipal
         btnUsuarios.Image = (Image)resources.GetObject("btnUsuarios.Image");
         btnUsuarios.ImageAlign = HorizontalAlignment.Left;
         btnUsuarios.ImageSize = new Size(22, 22);
-        btnUsuarios.Location = new Point(12, 210);
+        btnUsuarios.Location = new Point(14, 431);
         btnUsuarios.Name = "btnUsuarios";
         btnUsuarios.Padding = new Padding(0, 0, 10, 0);
         btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges12;

@@ -112,7 +112,7 @@ namespace Pupuseria.Services
         public void CambiarClave(int idUsuario, string nuevaClave)
         {
             if (string.IsNullOrWhiteSpace(nuevaClave))
-                throw new ArgumentException("La nueva contraseña está llegando vacía.");
+                throw new ArgumentException("La nueva contraseña no puede estar vacía.");
 
             using var db = new PupuseriaDbContext();
             var u = db.Usuarios.Find(idUsuario) ?? throw new InvalidOperationException("El usuario ya no existe.");

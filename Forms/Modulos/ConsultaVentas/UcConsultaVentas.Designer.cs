@@ -36,8 +36,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -46,6 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             pnlFiltro = new Guna.UI2.WinForms.Guna2GradientPanel();
             dgvUsuarios = new DataGridView();
@@ -54,7 +54,6 @@
             btnVerDetalle = new Guna.UI2.WinForms.Guna2Button();
             lblCantidadResultadosPorFiltroDgv = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            txtFiltrarEstadoVentas = new Guna.UI2.WinForms.Guna2TextBox();
             lblFiltrarEstadoVentas = new Label();
             btnBuscarVentas = new Guna.UI2.WinForms.Guna2Button();
             lblFechaInicial = new Label();
@@ -65,6 +64,7 @@
             txtNumVentas = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
             lblHistorial = new Label();
+            txtFiltrarEstadoVentas = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             pnlFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
@@ -85,9 +85,9 @@
             // 
             // pnlFiltro
             // 
-            pnlFiltro.BackColor = Color.FromArgb(224, 224, 224);
+            pnlFiltro.BackColor = Color.Transparent;
             pnlFiltro.BackgroundImageLayout = ImageLayout.None;
-            pnlFiltro.BorderColor = SystemColors.ButtonShadow;
+            pnlFiltro.BorderColor = Color.FromArgb(215, 204, 200);
             pnlFiltro.BorderRadius = 15;
             pnlFiltro.BorderThickness = 1;
             pnlFiltro.Controls.Add(dgvUsuarios);
@@ -99,12 +99,12 @@
             pnlFiltro.Controls.Add(label1);
             pnlFiltro.Controls.Add(lblHistorial);
             pnlFiltro.CustomizableEdges = customizableEdges15;
-            pnlFiltro.FillColor = Color.FromArgb(224, 224, 224);
-            pnlFiltro.Location = new Point(59, 75);
+            pnlFiltro.FillColor = Color.White;
+            pnlFiltro.Location = new Point(29, 44);
             pnlFiltro.Margin = new Padding(3, 2, 3, 2);
             pnlFiltro.Name = "pnlFiltro";
             pnlFiltro.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            pnlFiltro.Size = new Size(944, 614);
+            pnlFiltro.Size = new Size(1000, 848);
             pnlFiltro.TabIndex = 1;
             // 
             // dgvUsuarios
@@ -135,20 +135,22 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUsuarios.EnableHeadersVisualStyles = false;
-            dgvUsuarios.Location = new Point(18, 328);
+            dgvUsuarios.Location = new Point(32, 374);
             dgvUsuarios.MultiSelect = false;
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.RowHeadersWidth = 51;
             dgvUsuarios.RowTemplate.Height = 48;
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuarios.Size = new Size(903, 184);
+            dgvUsuarios.Size = new Size(935, 317);
             dgvUsuarios.TabIndex = 24;
+            dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
             // 
             // guna2vSeparator1
             // 
             guna2vSeparator1.BackColor = Color.Transparent;
-            guna2vSeparator1.Location = new Point(88, 528);
+            guna2vSeparator1.Location = new Point(101, 716);
             guna2vSeparator1.Name = "guna2vSeparator1";
             guna2vSeparator1.Size = new Size(10, 23);
             guna2vSeparator1.TabIndex = 13;
@@ -158,7 +160,7 @@
             lblCantidadSeleccionadoEnDgv.AutoSize = true;
             lblCantidadSeleccionadoEnDgv.BackColor = Color.Transparent;
             lblCantidadSeleccionadoEnDgv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblCantidadSeleccionadoEnDgv.Location = new Point(110, 533);
+            lblCantidadSeleccionadoEnDgv.Location = new Point(123, 721);
             lblCantidadSeleccionadoEnDgv.Name = "lblCantidadSeleccionadoEnDgv";
             lblCantidadSeleccionadoEnDgv.Size = new Size(78, 15);
             lblCantidadSeleccionadoEnDgv.TabIndex = 12;
@@ -176,20 +178,21 @@
             btnVerDetalle.FillColor = Color.FromArgb(230, 81, 0);
             btnVerDetalle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnVerDetalle.ForeColor = Color.White;
-            btnVerDetalle.Location = new Point(724, 536);
+            btnVerDetalle.Location = new Point(770, 708);
             btnVerDetalle.Margin = new Padding(3, 2, 3, 2);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnVerDetalle.Size = new Size(197, 28);
             btnVerDetalle.TabIndex = 4;
             btnVerDetalle.Text = "Ver Detalle";
+            btnVerDetalle.Click += btnVerDetalle_Click;
             // 
             // lblCantidadResultadosPorFiltroDgv
             // 
             lblCantidadResultadosPorFiltroDgv.AutoSize = true;
             lblCantidadResultadosPorFiltroDgv.BackColor = Color.Transparent;
             lblCantidadResultadosPorFiltroDgv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblCantidadResultadosPorFiltroDgv.Location = new Point(18, 533);
+            lblCantidadResultadosPorFiltroDgv.Location = new Point(31, 721);
             lblCantidadResultadosPorFiltroDgv.Name = "lblCantidadResultadosPorFiltroDgv";
             lblCantidadResultadosPorFiltroDgv.Size = new Size(64, 15);
             lblCantidadResultadosPorFiltroDgv.TabIndex = 4;
@@ -197,8 +200,8 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.White;
-            guna2Panel1.BorderColor = SystemColors.ButtonShadow;
+            guna2Panel1.BackColor = Color.Transparent;
+            guna2Panel1.BorderColor = Color.FromArgb(215, 204, 200);
             guna2Panel1.BorderRadius = 15;
             guna2Panel1.BorderThickness = 1;
             guna2Panel1.Controls.Add(txtFiltrarEstadoVentas);
@@ -211,38 +214,20 @@
             guna2Panel1.Controls.Add(lblFechaFinal);
             guna2Panel1.Controls.Add(txtNumVentas);
             guna2Panel1.CustomizableEdges = customizableEdges13;
+            guna2Panel1.FillColor = Color.FromArgb(251, 248, 246);
             guna2Panel1.Location = new Point(18, 77);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel1.Size = new Size(903, 201);
+            guna2Panel1.Size = new Size(949, 201);
             guna2Panel1.TabIndex = 11;
-            // 
-            // txtFiltrarEstadoVentas
-            // 
-            txtFiltrarEstadoVentas.BorderRadius = 10;
-            txtFiltrarEstadoVentas.CustomizableEdges = customizableEdges3;
-            txtFiltrarEstadoVentas.DefaultText = "";
-            txtFiltrarEstadoVentas.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtFiltrarEstadoVentas.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtFiltrarEstadoVentas.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtFiltrarEstadoVentas.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtFiltrarEstadoVentas.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtFiltrarEstadoVentas.Font = new Font("Segoe UI", 9F);
-            txtFiltrarEstadoVentas.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtFiltrarEstadoVentas.Location = new Point(299, 130);
-            txtFiltrarEstadoVentas.Name = "txtFiltrarEstadoVentas";
-            txtFiltrarEstadoVentas.PlaceholderText = "";
-            txtFiltrarEstadoVentas.SelectedText = "";
-            txtFiltrarEstadoVentas.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtFiltrarEstadoVentas.Size = new Size(212, 36);
-            txtFiltrarEstadoVentas.TabIndex = 13;
             // 
             // lblFiltrarEstadoVentas
             // 
             lblFiltrarEstadoVentas.AutoSize = true;
+            lblFiltrarEstadoVentas.BackColor = Color.Transparent;
             lblFiltrarEstadoVentas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblFiltrarEstadoVentas.ForeColor = Color.FromArgb(62, 39, 35);
-            lblFiltrarEstadoVentas.Location = new Point(299, 112);
+            lblFiltrarEstadoVentas.Location = new Point(353, 112);
             lblFiltrarEstadoVentas.Name = "lblFiltrarEstadoVentas";
             lblFiltrarEstadoVentas.Size = new Size(43, 15);
             lblFiltrarEstadoVentas.TabIndex = 12;
@@ -263,13 +248,15 @@
             btnBuscarVentas.Margin = new Padding(3, 2, 3, 2);
             btnBuscarVentas.Name = "btnBuscarVentas";
             btnBuscarVentas.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnBuscarVentas.Size = new Size(197, 36);
+            btnBuscarVentas.Size = new Size(229, 36);
             btnBuscarVentas.TabIndex = 2;
             btnBuscarVentas.Text = "Buscar Ventas";
+            btnBuscarVentas.Click += btnBuscarVentas_Click;
             // 
             // lblFechaInicial
             // 
             lblFechaInicial.AutoSize = true;
+            lblFechaInicial.BackColor = Color.Transparent;
             lblFechaInicial.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblFechaInicial.ForeColor = Color.FromArgb(62, 39, 35);
             lblFechaInicial.Location = new Point(25, 27);
@@ -281,6 +268,7 @@
             // txtNumVenta
             // 
             txtNumVenta.AutoSize = true;
+            txtNumVenta.BackColor = Color.Transparent;
             txtNumVenta.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtNumVenta.ForeColor = Color.FromArgb(62, 39, 35);
             txtNumVenta.Location = new Point(27, 112);
@@ -291,24 +279,25 @@
             // 
             // dtpFechaFinal
             // 
+            dtpFechaFinal.BackColor = Color.Transparent;
             dtpFechaFinal.BorderRadius = 10;
             dtpFechaFinal.Checked = true;
             dtpFechaFinal.CustomizableEdges = customizableEdges7;
             dtpFechaFinal.FillColor = Color.White;
             dtpFechaFinal.Font = new Font("Segoe UI", 9F);
             dtpFechaFinal.Format = DateTimePickerFormat.Short;
-            dtpFechaFinal.Location = new Point(299, 45);
+            dtpFechaFinal.Location = new Point(353, 45);
             dtpFechaFinal.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFechaFinal.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFechaFinal.Name = "dtpFechaFinal";
             dtpFechaFinal.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            dtpFechaFinal.Size = new Size(212, 36);
+            dtpFechaFinal.Size = new Size(235, 36);
             dtpFechaFinal.TabIndex = 10;
             dtpFechaFinal.Value = new DateTime(2026, 10, 26, 14, 0, 21, 491);
             // 
             // dtpFechaInicial
             // 
-            dtpFechaInicial.BackColor = Color.White;
+            dtpFechaInicial.BackColor = Color.Transparent;
             dtpFechaInicial.BorderRadius = 10;
             dtpFechaInicial.Checked = true;
             dtpFechaInicial.CustomizableEdges = customizableEdges9;
@@ -320,17 +309,17 @@
             dtpFechaInicial.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFechaInicial.Name = "dtpFechaInicial";
             dtpFechaInicial.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            dtpFechaInicial.ShowUpDown = true;
-            dtpFechaInicial.Size = new Size(212, 36);
-            dtpFechaInicial.TabIndex = 9;
+            dtpFechaInicial.Size = new Size(237, 36);
+            dtpFechaInicial.TabIndex = 10;
             dtpFechaInicial.Value = new DateTime(2026, 10, 26, 14, 0, 17, 811);
             // 
             // lblFechaFinal
             // 
             lblFechaFinal.AutoSize = true;
+            lblFechaFinal.BackColor = Color.Transparent;
             lblFechaFinal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblFechaFinal.ForeColor = Color.FromArgb(62, 39, 35);
-            lblFechaFinal.Location = new Point(299, 27);
+            lblFechaFinal.Location = new Point(353, 27);
             lblFechaFinal.Name = "lblFechaFinal";
             lblFechaFinal.Size = new Size(67, 15);
             lblFechaFinal.TabIndex = 3;
@@ -338,6 +327,7 @@
             // 
             // txtNumVentas
             // 
+            txtNumVentas.BackColor = Color.Transparent;
             txtNumVentas.BorderRadius = 10;
             txtNumVentas.CustomizableEdges = customizableEdges11;
             txtNumVentas.DefaultText = "";
@@ -349,11 +339,12 @@
             txtNumVentas.Font = new Font("Segoe UI", 9F);
             txtNumVentas.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNumVentas.Location = new Point(27, 130);
+            txtNumVentas.Margin = new Padding(3, 4, 3, 4);
             txtNumVentas.Name = "txtNumVentas";
-            txtNumVentas.PlaceholderText = "";
+            txtNumVentas.PlaceholderText = "N° Venta";
             txtNumVentas.SelectedText = "";
             txtNumVentas.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtNumVentas.Size = new Size(210, 36);
+            txtNumVentas.Size = new Size(235, 36);
             txtNumVentas.TabIndex = 8;
             // 
             // label1
@@ -374,11 +365,33 @@
             lblHistorial.BackColor = Color.Transparent;
             lblHistorial.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblHistorial.ForeColor = Color.FromArgb(62, 39, 35);
-            lblHistorial.Location = new Point(18, 304);
+            lblHistorial.Location = new Point(32, 334);
             lblHistorial.Name = "lblHistorial";
             lblHistorial.Size = new Size(153, 21);
             lblHistorial.TabIndex = 3;
             lblHistorial.Text = "Historial de Ventas";
+            // 
+            // txtFiltrarEstadoVentas
+            // 
+            txtFiltrarEstadoVentas.BackColor = Color.Transparent;
+            txtFiltrarEstadoVentas.BorderRadius = 10;
+            txtFiltrarEstadoVentas.CustomizableEdges = customizableEdges3;
+            txtFiltrarEstadoVentas.DefaultText = "";
+            txtFiltrarEstadoVentas.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtFiltrarEstadoVentas.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtFiltrarEstadoVentas.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtFiltrarEstadoVentas.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtFiltrarEstadoVentas.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtFiltrarEstadoVentas.Font = new Font("Segoe UI", 9F);
+            txtFiltrarEstadoVentas.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtFiltrarEstadoVentas.Location = new Point(353, 130);
+            txtFiltrarEstadoVentas.Margin = new Padding(3, 4, 3, 4);
+            txtFiltrarEstadoVentas.Name = "txtFiltrarEstadoVentas";
+            txtFiltrarEstadoVentas.PlaceholderText = "Ingrese estado de venta";
+            txtFiltrarEstadoVentas.SelectedText = "";
+            txtFiltrarEstadoVentas.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtFiltrarEstadoVentas.Size = new Size(235, 36);
+            txtFiltrarEstadoVentas.TabIndex = 13;
             // 
             // UcConsultaVentas
             // 
@@ -418,8 +431,8 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator1;
         private Label lblCantidadSeleccionadoEnDgv;
-        private Guna.UI2.WinForms.Guna2TextBox txtFiltrarEstadoVentas;
         private Label lblFiltrarEstadoVentas;
         private DataGridView dgvUsuarios;
+        private Guna.UI2.WinForms.Guna2TextBox txtFiltrarEstadoVentas;
     }
 }

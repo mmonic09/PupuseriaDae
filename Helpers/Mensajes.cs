@@ -22,39 +22,41 @@ namespace Pupuseria.helpers
             MessageBox.Show(texto, Titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
 
         // Convierte los errores técnicos de la base de datos en mensajes entendibles
+        // Convierte los errores técnicos de la base de datos en mensajes entendibles
         public static void ErrorDeDatos(Exception ex)
         {
             var raiz = ex.GetBaseException();
 
             if (raiz is SqlException sql)
             {
-                switch (sql.Number)
+                if (EsDuplicado(sql.Number))
                 {
-                    case 2601:
-                    case 2627:   // valor duplicado
-                        if (sql.Message.Contains("UQ_Usuario_NombreUsuario"))
-                            Aviso("Usuario: ya existe otro usuario con ese nombre.");
-                        else
-                            Aviso("Ya existe un registro con ese valor. No se permiten datos duplicados.");
-                        return;
+                    if (sql.Message.Contains("UQ_Usuario_NombreUsuario"))
+                        Aviso("Usuario: ya existe otro usuario con ese nombre.");
+                    else
+                        Aviso("Ya existe un registro con ese valor. No se permiten datos duplicados.");
+                    return;
+                }
 
-                    case -1:
-                    case 2:
-                    case 26:
-                    case 40:
-                    case 53:
-                    case 233:
-                    case 4060:
-                    case 10060:
-                    case 18456:  // no se puede conectar / iniciar sesión en SQL Server
-                        Error("No se pudo conectar con la base de datos.\n\n" +
-                              "Verifique que SQL Server esté en ejecución y que la cadena de conexión " +
-                              "(Data/PupuseriaDbContext.cs) sea correcta.");
-                        return;
+                if (EsErrorDeConexion(sql.Number))
+                {
+                    Error("No se pudo conectar con la base de datos.\n\n" +
+                          "Verifique que SQL Server esté en ejecución y que la cadena de conexión " +
+                          "(Data/PupuseriaDbContext.cs) sea correcta.");
+                    return;
                 }
             }
 
             Error("Ocurrió un error inesperado:\n\n" + raiz.Message);
         }
+
+        // 2601 y 2627: se intentó guardar un valor que ya existe
+        private static bool EsDuplicado(int numero) =>
+            numero is 2601 or 2627;
+
+        // Todos estos números significan "no se pudo llegar a SQL Server o entrar a él"
+        private static bool EsErrorDeConexion(int numero) =>
+            numero is -1 or 2 or 26 or 40 or 53 or 233 or 4060 or 10060 or 18456;
     }
 }
+

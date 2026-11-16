@@ -9,7 +9,11 @@ namespace Pupuseria.Services
 {
     // intermediario entre el servicio de reportes y sql
     internal class ReporteService
+
+
     {
+        //cuántas ventas, cuánto dinero y cuál fue el producto más vendido.
+        // Solo cuentan las ventas "Completada"; el día final entra completo.
         public (int Transacciones, decimal Ingreso, string ProductoEstrella) ObtenerResumen(DateTime desde, DateTime hasta)
         {
             using var db = new PupuseriaDbContext();
@@ -35,27 +39,27 @@ namespace Pupuseria.Services
                 );
             }
 
-        public List<(string Categoria, int Unidades, decimal Ingreso)> ObtenerVentasPorCategoria(DateTime desde, DateTime hasta)
+        public List<(int IdVenta, DateTime Fecha, string Vendedor, string MetodoPago, decimal Total)> ObtenerVentas(DateTime desde, DateTime hasta)
         {
             using var db = new PupuseriaDbContext();
             var ini = desde.Date;
             var fin = hasta.Date.AddDays(1);
 
-            var filas = db.DetallesVenta.AsNoTracking()
-                .Where(d => d.Venta.Estado == "Completada" && d.Venta.Fecha >= ini && d.Venta.Fecha < fin)
-                .GroupBy(d => d.Producto.Categoria.Nombre)
-                .Select(g => new
-
+            var filas = db.Ventas.AsNoTracking()
+                .Where(v => v.Estado == "Completada" && v.Fecha >= ini && v.Fecha < fin)
+                .OrderByDescending(v => v.Fecha)
+                .Select(v => new
                 {
-                    Categoria = g.Key,
-                    Unidades = g.Sum(x => x.Cantidad),
-                    Ingreso = g.Sum(x => x.Cantidad * x.PrecioUnitario)
+                    v.IdVenta,
+                    v.Fecha,
+                    Vendedor = v.Usuario.Nombre + " " + v.Usuario.Apellido,
+                    MetodoPago = v.MetodoPago.Nombre,
+                    v.Total
                 })
-                .OrderByDescending(x => x.Ingreso)
                 .ToList();
 
-            return filas.Select(f => (f.Categoria, f.Unidades, f.Ingreso)).ToList();
+            return filas.Select(f => (f.IdVenta, f.Fecha, f.Vendedor, f.MetodoPago, f.Total)).ToList();
         }
-     }
+    }
  }
 
